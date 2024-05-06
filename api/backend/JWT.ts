@@ -4,13 +4,13 @@ export default class ManejadorJWT{
     static secreto: string = 'LaClaveSecreta';  
     static validezSegundos: number = 60;
 
-    static FirmarToken(payload){
+    static FirmarToken(payload : any){
         payload.expiracion = Math.floor(Date.now() / 1000) + ManejadorJWT.validezSegundos;
         var token = jwt.sign(payload, ManejadorJWT.secreto);
         return token;
     }
 
-    static ExtraerPayload(token): null|any {
+    static ExtraerPayload(token : any): null|any {
         let payload = null;
         try {
             payload = jwt.verify(token, ManejadorJWT.secreto);
@@ -20,7 +20,7 @@ export default class ManejadorJWT{
         }
     }
 
-    static TokenExpirada(token):boolean{
+    static TokenExpirada(token : any):boolean{
         let payload = ManejadorJWT.ExtraerPayload(token);
         if (payload!==null){
             if (payload.expiracion < Math.floor(Date.now() / 1000)){
@@ -33,7 +33,7 @@ export default class ManejadorJWT{
         }
     }
 
-    static RenovarToken(token){
+    static RenovarToken(token : any){
         let payload = ManejadorJWT.ExtraerPayload(token);
         if (payload!==null){
             if (payload.expiracion < Math.floor(Date.now() / 1000)){
