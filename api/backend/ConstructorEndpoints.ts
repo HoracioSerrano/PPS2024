@@ -15,9 +15,7 @@ export default class ConstructorEndpoints {
 
     public registrarEndPoints(){
         /*Registra Archivos estaticos de FrontEnd en la ruta raiz*/
-        this.app.use(express.static('api/frontend'));
-        /*this.app.use(express.static('api/frontend/js'));*/
-        /*this.app.use(express.static(path.join(__dirname, 'api/frontend')));*/
+        this.app.use(express.static(path.join(__dirname, '../frontend')));
 
         this.app.get("/ejemplo", (req : Request, res : Response) => res.send(endpointPrueba()));
 
