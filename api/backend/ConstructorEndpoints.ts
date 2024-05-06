@@ -4,6 +4,7 @@ import {Usuario} from './Entidades';
 import { ActiveRecord } from "./ActiveRecord";
 import { Application, Request, Response } from 'express';
 import express from "express";
+import path from "path"
 
 export default class ConstructorEndpoints {
     app : any;
@@ -15,6 +16,8 @@ export default class ConstructorEndpoints {
     public registrarEndPoints(){
         /*Registra Archivos estaticos de FrontEnd en la ruta raiz*/
         this.app.use(express.static('api/frontend'));
+        /*this.app.use(express.static('api/frontend/js'));*/
+        /*this.app.use(express.static(path.join(__dirname, 'api/frontend')));*/
 
         this.app.get("/ejemplo", (req : Request, res : Response) => res.send(endpointPrueba()));
 
