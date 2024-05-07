@@ -5,9 +5,7 @@ const app = express();
 import path from "path"
 import bodyParser from 'body-parser';
 
-//app.use(express.json());
 app.use(bodyParser.json());
-//app.use(express.urlencoded({ extended: true }));
 
 app.post('/api/login', function (req:any, res:any, next:any) {
     console.log('middleware');

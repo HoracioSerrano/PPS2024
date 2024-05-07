@@ -6,6 +6,7 @@ import { Application, Request, Response } from 'express';
 import express from "express";
 import path from "path"
 import {logear} from "./EndpointsUsuario"
+import { javascriptUrls } from "./EndpoitsDirecciones";
 
 export default class ConstructorEndpoints {
     app : any;
@@ -22,7 +23,8 @@ export default class ConstructorEndpoints {
         //this.app.post("/api/login", logear);
 
 
-
+        /*Endpoint para generacion de clase javascript con url*/
+        this.app.get("/claseUrls",javascriptUrls);
 
 
 
