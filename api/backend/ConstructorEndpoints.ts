@@ -5,6 +5,7 @@ import { ActiveRecord } from "./ActiveRecord";
 import { Application, Request, Response } from 'express';
 import express from "express";
 import path from "path"
+import {logear} from "./EndpointsUsuario"
 
 export default class ConstructorEndpoints {
     app : any;
@@ -17,7 +18,17 @@ export default class ConstructorEndpoints {
         /*Registra Archivos estaticos de FrontEnd en la ruta raiz*/
         this.app.use(express.static(path.join(__dirname, '../frontend')));
 
-        this.app.get("/ejemplo", (req : Request, res : Response) => res.send(endpointPrueba()));
+        /*Endpoints usuarios*/
+        //this.app.post("/api/login", logear);
+
+
+
+
+
+
+
+
+
 
         this.app.get("/pruebajwt", 
             (req : Request, res : Response)=>{
@@ -25,8 +36,7 @@ export default class ConstructorEndpoints {
                     ManejadorJWT.ExtraerPayload('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJob3JhY2lvIiwiYXBlbGxpZG8iOiJzZXJyYW5vIiwiZXhwaXJhY2lvbiI6MTcxMzkyMzYyOSwiaWF0IjoxNzEzOTIzNTY5fQ.NBx3dp48RtVknTf4r5KJrRXKS30145SK2f_k3t5DzaM')
                 )
         });
-
-        /*Active Record*/
+        /*
         this.app.get("/ejemploLeer",
             (req : Request, res : any)=>{
                 let u = new Usuario();
@@ -46,5 +56,6 @@ export default class ConstructorEndpoints {
                 .catch(x=>{res.send(x)});
             }
         )
+        */
     }
 }
