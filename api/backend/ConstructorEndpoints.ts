@@ -18,15 +18,11 @@ export default class ConstructorEndpoints {
     public registrarEndPoints(){
         /*Registra Archivos estaticos de FrontEnd en la ruta raiz*/
         this.app.use(express.static(path.join(__dirname, '../frontend')));
-
-        /*Endpoints usuarios*/
-        //this.app.post("/api/login", logear);
-
-
-        /*Endpoint para generacion de clase javascript con url*/
+        /*Endpoint para generacion de clase javascript con urls en SSR*/
         this.app.get("/claseUrls",javascriptUrls);
+        /*Endpoints usuarios*/
+        this.app.post("/api/login", logear);
 
-        this.app.get("/hola",(req:any,res:any)=>{res.send("hola")});
 
 
 

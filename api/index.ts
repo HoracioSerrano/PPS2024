@@ -6,17 +6,6 @@ import path from "path"
 import bodyParser from 'body-parser';
 
 app.use(bodyParser.json());
-/*
-app.post('/api/login', function (req:any, res:any, next:any) {
-    console.log('middleware');
-    console.log(req.body)
-    res.json(req.body)
-  })
-
-app.post('/api/login', function (req:any, res:any) {
-    console.log('EP')
-  });
-*/
 
 
 
