@@ -26,18 +26,18 @@ export default class ConstructorEndpoints {
         /*Endpoint para generacion de clase javascript con url*/
         this.app.get("/claseUrls",javascriptUrls);
 
+        this.app.get("/hola",(req:any,res:any)=>{res.send("hola")});
 
 
 
 
-
-
+/*
         this.app.get("/pruebajwt", 
             (req : Request, res : Response)=>{
                 res.send(
                     ManejadorJWT.ExtraerPayload('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21icmUiOiJob3JhY2lvIiwiYXBlbGxpZG8iOiJzZXJyYW5vIiwiZXhwaXJhY2lvbiI6MTcxMzkyMzYyOSwiaWF0IjoxNzEzOTIzNTY5fQ.NBx3dp48RtVknTf4r5KJrRXKS30145SK2f_k3t5DzaM')
                 )
-        });
+        });*/
         /*
         this.app.get("/ejemploLeer",
             (req : Request, res : any)=>{
