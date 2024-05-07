@@ -3,5 +3,5 @@ import express from "express";
 
 export function javascriptUrls(req:Request, res:Response){
     res.setHeader('Content-Type', 'text/javascript');
-    res.send(process.env.API_URL);
+    res.send(process.env.AMBIENTE);
 }
