@@ -21,4 +21,4 @@ export function javascriptUrls(req:Request, res:Response){
         
     `
     res.send(clase);
-}
+} 
